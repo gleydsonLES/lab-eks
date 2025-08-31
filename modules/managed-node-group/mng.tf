@@ -10,7 +10,12 @@ resource "aws_eks_node_group" "eks_managed_node_group" {
   capacity_type  = "SPOT"
   instance_types = var.spot_instance_types
   disk_size      = 20
-  tags           = var.tags
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-nodegroup"
+    }
+  )
 
   scaling_config {
     desired_size = 1
