@@ -1,6 +1,5 @@
-resource "aws_internet_gateway" "eks_igw" {
+resource "aws_internet_gateway" "eks-igw" {
   vpc_id = aws_vpc.eks_vpc.id
-
   tags = merge(
     var.tags,
     {
@@ -14,13 +13,12 @@ resource "aws_route_table" "eks_public_route_table" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.eks_igw.id
+    gateway_id = aws_internet_gateway.eks-igw.id
   }
-
   tags = merge(
     var.tags,
     {
-      Name = "${var.project_name}-public-rtb"
+      Name = "${var.project_name}-pub-route-table"
     }
   )
 }

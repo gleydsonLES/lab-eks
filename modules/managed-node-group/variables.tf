@@ -1,25 +1,29 @@
 variable "project_name" {
   type        = string
-  description = "Project name to be used to name the resources (Name Tag)"
+  description = "Nome do projeto"
 }
 
 variable "tags" {
   type        = map(any)
-  description = "Tags to be added to AWS resources "
+  description = "Tags"
 }
 
 variable "cluster_name" {
   type        = string
-  description = "EKS Cluster name to create MNG"
+  description = "Nome do eks"
 }
 
 variable "subnet_private_1a" {
   type        = string
-  description = "Subnet ID from az 1a"
+  description = "Subnet ID para AZ 1a"
 }
 
 variable "subnet_private_1b" {
   type        = string
-  description = "Subnet ID from az 1b"
+  description = "Subnet ID para AZ 1b"
 }
 
+variable "spot_instance_types" {
+  type    = list(string)
+  default = ["t3a.small", "t3.small", ]
+}

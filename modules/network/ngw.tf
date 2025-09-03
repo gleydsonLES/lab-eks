@@ -49,11 +49,10 @@ resource "aws_route_table" "eks_private_route_table_1a" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.eks_ngw_1a.id
   }
-
   tags = merge(
     var.tags,
     {
-      Name = "${var.project_name}-priv-route-table-1a"
+      Name = "${var.project_name}-private-route-table-1a"
     }
   )
 }
@@ -65,11 +64,10 @@ resource "aws_route_table" "eks_private_route_table_1b" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.eks_ngw_1b.id
   }
-
   tags = merge(
     var.tags,
     {
-      Name = "${var.project_name}-priv-route-table-1b"
+      Name = "${var.project_name}-private-route-table-1b"
     }
   )
 }
