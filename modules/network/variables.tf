@@ -12,3 +12,8 @@ variable "tags" {
   type        = map(any)
   description = "Tags"
 }
+
+variable "vpc_id" {
+  type        = string
+  description = "EKS cluster name"
+}
