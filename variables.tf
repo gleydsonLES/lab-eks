@@ -8,3 +8,12 @@ variable "project_name" {
   description = "Nome do projeto"
 }
 
+variable "region" {
+  type        = string
+  description = "AWS Region"
+}
+
+variable "tags" {
+  type        = map(any)
+  description = "tags"
+}
