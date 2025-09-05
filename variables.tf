@@ -15,5 +15,5 @@ variable "region" {
 
 variable "tags" {
   type        = map(any)
-  description = "TAGS"
+  description = "tags"
 }
